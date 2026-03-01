@@ -1,4 +1,11 @@
-# Contributor: Gouri - MediaPipe Configuration
+# Contributor: SABARINATH KR - Hand Detection & Landmarks
+
+# Contributor: Gokul - Video Capture
+
+# Contributor: Alok - Setup and Initialization Module
+
+# Contributor: Gauri - MediaPipe Configuration
+
 import cv2
 import mediapipe as mp
 import math

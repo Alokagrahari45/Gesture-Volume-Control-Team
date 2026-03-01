@@ -6,6 +6,8 @@
 
 # Contributor: Gauri - MediaPipe Configuration
 
+# Contributor: Shubh Sahu - Gesture Logic & Exit Control
+
 import cv2
 import mediapipe as mp
 import math
@@ -28,7 +30,8 @@ cap.set(4,480)
 
 while True:
     ok,frame=cap.read()
-    if not ok:break
+    if not ok:
+        break
     rgb=cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
     result=hands.process(rgb)
     if result.multi_hand_landmarks:
@@ -56,7 +59,7 @@ while True:
             cv2.line(frame,(x1,y1),(x2,y2),(255,0,0),2)
 
             cv2.putText(frame,f"Distance: {int(distance)}",(20,40),cv2.FONT_HERSHEY_SIMPLEX,0.8,(0,255,255),2)
-            cv2.putText(frame,f"Gestures: {gesture}",(20,80),cv2.FONT_HERSHEY_SIMPLEX,0.8,(0,255,255),2)
+            cv2.putText(frame,f"Gesture: {gesture}",(20,80),cv2.FONT_HERSHEY_SIMPLEX,0.8,(0,255,255),2)
     cv2.imshow("Gesture Detection",frame)
     key=cv2.waitKey(1) & 0xFF
     if key == ord('q') or key == 27:

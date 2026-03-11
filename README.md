@@ -21,6 +21,6 @@ Milestone 3 – Volume control logic using hand gestures
 ## Contributors
 - Alok Kumar
 - Gokul
-- Gauri
+- Gouri
 - Shubh Sahu
 - Sabarinath KR

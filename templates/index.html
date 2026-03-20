@@ -14,16 +14,23 @@
 
 <div class="buttons">
 
-<button onclick="startCamera()">Start</button>
-<button onclick="stopCamera()">Stop</button>
+<button class="start-btn" onclick="startCamera()">Start</button>
+<button class="stop-btn" onclick="stopCamera()">Stop</button>
 
 </div>
 
 <h2>Webcam Preview</h2>
+<div class="cam-container">
 
-<div class="cam">
+    <div class="cam">
+        <img id="video" width="500">
+    </div>
 
-<img id="video" width="500">
+    <!--  overlay bar -->
+    <div class="volume-vertical" id="volumeBox"
+    style="display:none;">
+        <div id="volume-fill"></div>
+    </div>
 
 </div>
 
@@ -38,42 +45,43 @@
 <script>
 
 function startCamera(){
+    fetch("/start");  // 🔥 ye missing tha
 
-fetch("/start")
+    document.getElementById("video").src = "/video";
 
-.then(response => response.json())
+    document.getElementById("volumeBox").style.display = "block";
 
-.then(data => {
-
-document.getElementById("video").src="/video"
-
-})
-
+    document.querySelector(".start-btn").disabled = true;
+    document.querySelector(".stop-btn").disabled = false;
 }
 
 function stopCamera(){
+    fetch("/stop");
+    document.getElementById("video").src="";
 
-fetch("/stop")
+    // hide volume bar
+    document.getElementById("volumeBox").style.display = "none";
 
-document.getElementById("video").src=""
-
+    // button control
+    document.querySelector(".start-btn").disabled = false;
+    document.querySelector(".stop-btn").disabled = true;
 }
+setInterval(() => {
+    fetch("/volume")
+    .then(res => res.json())
+    .then(data => {
 
-setInterval(()=>{
+        let vol = data.volume;
 
-fetch("/volume")
+        document.getElementById("vol").innerText = vol;
+        document.getElementById("progress").style.width = vol + "%";
+        document.getElementById("volume-fill").style.height = vol + "%";
 
-.then(res=>res.json())
+    });
+}, 500);
 
-.then(data=>{
+document.querySelector(".stop-btn").disabled = true
 
-document.getElementById("vol").innerText=data.volume
-
-document.getElementById("progress").style.width=data.volume+"%"
-
-})
-
-},500)
 
 </script>
 

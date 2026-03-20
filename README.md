@@ -1,24 +1,44 @@
-# Hand Gesture Volume Control
+Gesture Volume Control
 
-This project is developed as part of the Infosys Internship milestone tasks.
+📌 Description
 
-The objective of this project is to control the system volume using hand gestures using computer vision.
+This project controls system volume using hand gestures through a webcam. It uses computer vision techniques to detect hand movements and adjust volume in real time.
 
-The system detects the distance between the thumb and index finger using MediaPipe hand tracking and maps it to the system volume level.
+🛠 Technologies Used
 
-## Technologies Used
 - Python
 - OpenCV
 - MediaPipe
-- NumPy
-- PyAutoGUI
+- Flask
+- Pycaw
 
-## Project Milestones
-Milestone 1 – Hand detection using MediaPipe  
-Milestone 2 – Gesture detection and distance calculation  
-Milestone 3 – Volume control logic using hand gestures  
+⚙️ How it Works
 
-## Contributors
+- Webcam captures live video
+- MediaPipe detects hand landmarks
+- Distance between thumb and index finger is calculated
+- Volume is adjusted based on finger distance
+
+▶️ Run Project
+
+1. Install dependencies:
+   pip install -r requirements.txt
+
+2. Run the application:
+   python app.py
+
+3. Open browser:
+   http://127.0.0.1:5000
+
+🎯 Features
+
+- Real-time gesture-based volume control
+- Live webcam preview
+- Horizontal & vertical volume indicators
+- Start/Stop control buttons
+
+👨‍💻 Team Members
+
 - Alok Kumar Agrahari 
 - Gokul
 - Gouri

@@ -1,3 +1,16 @@
+This is an old backup repository.
+
+This repository was used during the development phase of the project.
+
+For the final submission, please refer to:
+
+- Team Repository: https://github.com/Alokagrahari45/Gesture-Volume-Control-Team  
+- Individual Repository: https://github.com/Alokagrahari45/Gesture-Volume-Control-Alok  
+
+This repository is kept only for backup and reference purposes.
+
+
+
 Gesture Volume Control
 
 📌 Description

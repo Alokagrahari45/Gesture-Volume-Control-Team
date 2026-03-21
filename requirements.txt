@@ -3,3 +3,4 @@ mediapipe
 pycaw
 flask
 comtypes
+pyautogui

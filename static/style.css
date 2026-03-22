@@ -166,3 +166,37 @@ border-radius:10px;
 #volume-fill {
     box-shadow: 0 0 10px #00ff00;
 }
+
+.guide {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #1e1e1e;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.guide h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.gesture-box {
+    background: #2c2c2c;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.gesture-box p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.gesture-box span {
+    font-size: 13px;
+    color: #ccc;
+}
